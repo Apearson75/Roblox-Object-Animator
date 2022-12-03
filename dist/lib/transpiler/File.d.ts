@@ -4,6 +4,7 @@ export declare class File {
     path: string;
     constructor(name: string, path: string);
     save(): void;
+    get luaCode(): string;
     addCode(code: string): void;
     createLocal(name: string, val: string): void;
     callFunction(func: string, args: any[]): string;

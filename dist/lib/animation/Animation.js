@@ -28,24 +28,24 @@ var EasingStyles;
 class Animation {
     name;
     file;
-    time;
+    start;
+    end;
     property;
     easingStyle;
-    final;
-    init;
-    constructor(file, time, property, easingStyle, final, init) {
+    val;
+    constructor(file, start, end, property, easingStyle, val) {
         this.file = file;
-        this.time = time;
-        this.final = final;
+        this.start = start;
+        this.end = end;
+        this.val = val;
         this.property = property;
         this.easingStyle = easingStyle;
-        this.init = init;
         this.name = (0, File_1.randomName)(5);
         this.addCode();
     }
     addCode() {
-        const TweenInfo = this.file.callFunction('TweenInfo.new', [this.time, this.easingStyle]);
-        const call = this.file.callFunction("TS:Create", ["obj", TweenInfo, new Table_1.Table({ [this.property]: this.final.value }).data]);
+        const TweenInfo = this.file.callFunction('TweenInfo.new', [this.end, this.easingStyle]);
+        const call = this.file.callFunction("TS:Create", ["obj", TweenInfo, new Table_1.Table({ [this.property]: this.val.value }).data]);
         this.file.createLocal(this.name, call);
     }
 }

@@ -20,7 +20,9 @@ class File {
     save() {
         this.addCode(`return ${this.name}`);
         fs_1.default.writeFileSync(`${this.path}/${this.name}.lua`, this.code);
-        console.log(this.code);
+    }
+    get luaCode() {
+        return this.code + `return ${this.name}`;
     }
     addCode(code) {
         this.code += code + "\n";

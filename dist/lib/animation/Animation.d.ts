@@ -20,11 +20,11 @@ export declare enum EasingStyles {
 export declare class Animation {
     name: string;
     file: File;
-    time: number;
+    start: number;
+    end: number;
     property: AnimationProperties;
     easingStyle: EasingStyles;
-    final: any;
-    init: any | undefined;
-    constructor(file: File, time: number, property: AnimationProperties, easingStyle: EasingStyles, final: any, init?: any);
+    val: any;
+    constructor(file: File, start: number, end: number, property: AnimationProperties, easingStyle: EasingStyles, val: any);
     private addCode;
 }

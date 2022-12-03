@@ -25,27 +25,27 @@ export enum EasingStyles {
 export class Animation {
     name: string;
     file: File;
-    time: number;
+    start: number;
+    end: number;
     property: AnimationProperties;
     easingStyle: EasingStyles;
-    final: any;
-    init: any | undefined;
+    val: any;
 
-    constructor(file: File, time: number, property: AnimationProperties, easingStyle: EasingStyles, final: any, init?: any) {
+    constructor(file: File, start: number, end: number, property: AnimationProperties, easingStyle: EasingStyles, val: any) {
         this.file = file;
-        this.time = time;
-        this.final = final;
+        this.start = start;
+        this.end = end;
+        this.val = val;
         this.property = property;
         this.easingStyle = easingStyle;
-        this.init = init;
         this.name = randomName(5);
 
         this.addCode();
     }
 
     private addCode() {
-        const TweenInfo = this.file.callFunction('TweenInfo.new', [this.time, this.easingStyle]);
-        const call = this.file.callFunction("TS:Create", ["obj", TweenInfo, new Table({[this.property]: this.final.value}).data]);
+        const TweenInfo = this.file.callFunction('TweenInfo.new', [this.end, this.easingStyle]);
+        const call = this.file.callFunction("TS:Create", ["obj", TweenInfo, new Table({[this.property]: this.val.value}).data]);
         this.file.createLocal(this.name, call);
     }
 }
