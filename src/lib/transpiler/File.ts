@@ -20,6 +20,10 @@ export class File {
         fs.writeFileSync(`${this.path}/${this.name}.lua`, this.code);
     }
 
+    get luaCode() {
+        return this.code + `return ${this.name}`;
+    }
+
     addCode(code: string) {
         this.code += code + "\n";
     }
