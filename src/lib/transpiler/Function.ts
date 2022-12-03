@@ -1,6 +1,6 @@
 export class Function {
     name: string;
-    functionCode: string = "";
+    private functionCode: string = "";
 
     constructor (name: string) {
         this.name = name;

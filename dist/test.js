@@ -1,0 +1,18 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const Animation_1 = require("./lib/animation/Animation");
+const File_1 = require("./lib/transpiler/File");
+const properties_1 = require("./lib/properties");
+const Animator_1 = require("./lib/animation/Animator");
+const file = new File_1.File("cool", "./out");
+const animator = new Animator_1.Animator(file);
+const final = new properties_1.Color3(100, 200, 100);
+const v1 = new properties_1.Vector3(0, 20, 0);
+const v2 = new properties_1.Vector3(0, 90, 0);
+const final2 = new properties_1.CFrame(v1, v2);
+const animation = new Animation_1.Animation(file, 4, Animation_1.AnimationProperties.Color3, Animation_1.EasingStyles.Expo, final);
+const animation2 = new Animation_1.Animation(file, 4, Animation_1.AnimationProperties.CFrame, Animation_1.EasingStyles.Expo, final2);
+animator.addAnimation(animation);
+animator.addAnimation(animation2);
+animator.exportAnimationsToFile();
+file.save();

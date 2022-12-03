@@ -11,5 +11,6 @@
       "types": ["node"],
       "strict": true,
       "outDir": "dist",
+      "declaration": true
     },
 }    

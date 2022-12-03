@@ -1,6 +1,6 @@
 import { Animation } from "./Animation";
-import { File } from "./transpiler/File";
-import { Function } from "./transpiler/Function";
+import { File } from "../transpiler/File";
+import { Function } from "../transpiler/Function";
 
 export class Animator {
     private file: File;
@@ -14,6 +14,7 @@ export class Animator {
         this.animations.push(animation);
     }
 
+    // Exports Play Function to file
     exportAnimationsToFile() {
         const func = new Function(`${this.file.name}.Play`);
         this.animations.forEach(anim => {
