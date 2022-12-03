@@ -18,7 +18,6 @@ export class File {
     save() {
         this.addCode(`return ${this.name}`);
         fs.writeFileSync(`${this.path}/${this.name}.lua`, this.code);
-        console.log(this.code);
     }
 
     addCode(code: string) {
