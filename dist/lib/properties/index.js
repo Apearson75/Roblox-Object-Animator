@@ -18,3 +18,4 @@ __exportStar(require("./CFrame"), exports);
 __exportStar(require("./Vector3"), exports);
 __exportStar(require("./Table"), exports);
 __exportStar(require("./Color3"), exports);
+__exportStar(require("./UDim2"), exports);

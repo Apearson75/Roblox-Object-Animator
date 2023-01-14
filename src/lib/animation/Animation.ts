@@ -3,9 +3,11 @@ import { Table } from "../properties/Table";
 
 // Properties that the animation can use
 export enum AnimationProperties {
+    UDim2 = "UDim2",
     CFrame = "CFrame",
     Color3 = "Color",
-    Vector3 = "Position"
+    Vector3 = "Position",
+    Rotation = "Rotation"
 };
 
 export enum EasingStyles {

@@ -1,8 +1,10 @@
 import { File } from "../transpiler/File";
 export declare enum AnimationProperties {
+    UDim2 = "UDim2",
     CFrame = "CFrame",
     Color3 = "Color",
-    Vector3 = "Position"
+    Vector3 = "Position",
+    Rotation = "Rotation"
 }
 export declare enum EasingStyles {
     Linear = 0,
