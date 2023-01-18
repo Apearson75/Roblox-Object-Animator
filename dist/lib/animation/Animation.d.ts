@@ -1,6 +1,6 @@
 import { File } from "../transpiler/File";
 export declare enum AnimationProperties {
-    UDim2 = "UDim2",
+    UDim2Pos = "Position",
     CFrame = "CFrame",
     Color3 = "Color",
     Vector3 = "Position",

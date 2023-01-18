@@ -3,7 +3,6 @@ export declare class File {
     code: string;
     path: string;
     constructor(name: string, path: string);
-    save(): void;
     get luaCode(): string;
     addCode(code: string): void;
     createLocal(name: string, val: string): void;

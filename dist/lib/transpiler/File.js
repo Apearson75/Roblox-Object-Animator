@@ -1,10 +1,6 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.randomName = exports.File = void 0;
-const fs_1 = __importDefault(require("fs"));
 const Table_1 = require("../properties/Table");
 class File {
     name;
@@ -16,10 +12,6 @@ class File {
         this.createLocal(name, new Table_1.Table({}).data);
         this.createLocal("TS", this.callFunction('game:GetService', ["'TweenService'"]));
         this.createLocal('obj', 'script.Parent');
-    }
-    save() {
-        this.addCode(`return ${this.name}`);
-        fs_1.default.writeFileSync(`${this.path}/${this.name}.lua`, this.code);
     }
     get luaCode() {
         return this.code + `return ${this.name}`;

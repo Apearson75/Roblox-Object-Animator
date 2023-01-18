@@ -21,5 +21,3 @@ animator.addAnimation(animation2);
 animator.addAnimation(animation3);
 
 animator.exportAnimationsToFile();
-
-file.save();

@@ -3,7 +3,7 @@ import { Table } from "../properties/Table";
 
 // Properties that the animation can use
 export enum AnimationProperties {
-    UDim2 = "UDim2",
+    UDim2Pos = "Position",
     CFrame = "CFrame",
     Color3 = "Color",
     Vector3 = "Position",

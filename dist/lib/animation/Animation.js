@@ -6,7 +6,7 @@ const Table_1 = require("../properties/Table");
 // Properties that the animation can use
 var AnimationProperties;
 (function (AnimationProperties) {
-    AnimationProperties["UDim2"] = "UDim2";
+    AnimationProperties["UDim2Pos"] = "Position";
     AnimationProperties["CFrame"] = "CFrame";
     AnimationProperties["Color3"] = "Color";
     AnimationProperties["Vector3"] = "Position";

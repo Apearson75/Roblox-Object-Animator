@@ -1,4 +1,3 @@
-import fs from "fs";
 import { Table } from "../properties/Table";
 
 export class File {
@@ -13,11 +12,6 @@ export class File {
         this.createLocal(name, new Table({}).data);
         this.createLocal("TS", this.callFunction('game:GetService', ["'TweenService'"]));
         this.createLocal('obj', 'script.Parent');
-    }
-
-    save() {
-        this.addCode(`return ${this.name}`);
-        fs.writeFileSync(`${this.path}/${this.name}.lua`, this.code);
     }
 
     get luaCode() {
